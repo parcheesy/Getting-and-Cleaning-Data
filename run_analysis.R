@@ -71,18 +71,16 @@ tdydata <- summarise_each(tdydata, funs(mean(., na.rm=TRUE)))
 remove_axis <- function(x) {
         if (grepl("-.$", x)) {
                 sub("-.$", "", x)
-        } else {
-                x
         }
+        else {x}
 }
 
 extract_axis <- function(x) {
         last <- str_extract(x, ".$")
         if (last=="X" || last=="Y" || last=="Z") {
                 last
-        } else {
-        NA
-        }
+        } 
+        else {NA}
 }
 
 # Tidy the data set by isolating one variable to each column.
